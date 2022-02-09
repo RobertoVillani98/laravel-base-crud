@@ -55,6 +55,11 @@
             <label for="image">Image</label>
             <input type="text" class="form-group" id="image" name="image" placeholder="Add url's image">
           </div>
-          <button type="submit" class="btn btn-danger">Add</button>
+
+          <div>
+            <button type="submit" class="btn btn-danger">Add</button>
+            <a href="{{route("products.index")}}"><button type="button" class="btn btn-primary ml-4">Torna ai prodotti</button></a>
+          </div>
+        
       </form>
 @endsection
