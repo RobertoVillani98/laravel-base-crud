@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('pageContent')
-<h1>Comics</h1>
+<h1 class="my-3">Comics</h1>
 <table class="table table-dark">
     <thead>
       <tr>
@@ -11,6 +11,8 @@
         <th scope="col">Series</th>
         <th scope="col">Sale Date</th>
         <th scope="col">Type</th>
+        <th scope="col">Action</th>
+
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,9 @@
         <td>{{$product->series}}</td>
         <td>{{$product->sale_date}}</td>
         <td>{{$product->type}}</td>
+        <td>
+            <a href="{{route("products.show", $product->id)}}"><button type="button" class="btn btn-danger">Info</button></a>
+        </td>
       </tr>
       @endforeach
     </tbody>
