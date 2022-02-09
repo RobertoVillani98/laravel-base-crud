@@ -2,7 +2,8 @@
 
 @section('pageContent')
 <h1 class="my-3">Comics</h1>
-<table class="table table-dark">
+<a href="{{route("products.create")}}"><button type="button" class="btn btn-warning">Add new comics</button></a>
+<table class="table table-dark my-4">
     <thead>
       <tr>
         <th scope="col">#</th>
