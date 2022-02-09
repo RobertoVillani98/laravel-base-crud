@@ -8,14 +8,17 @@
           <label for="title">Title</label>
           <input type="text" class="form-control" id="title" placeholder="Add title">
         </div>
+       
         <div class="form-group">
           <label for="description">Description</label>
           <textarea class="form-control" id="description" rows="5" placeholder="Add the description"></textarea>
         </div>
-        <div class="form-group form-check">
-            <label for="price">Price</label>
-            <input type="range" class="custom-range" min="0" max="50" step="0.5" id="price">
-        </div>
+       
+        <div class="form-group">
+          <label for="price">Prezzo</label>
+          <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo">
+      </div>
+       
         <div class="form-group">
             <label for="series">Series</label>
             <select class="custom-select" id="series" name="series">
