@@ -44,6 +44,11 @@
           </div>
 
           <div class="form-group">
+            <label for="sale_date">Sale Date</label>
+            <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Add sale date">
+        </div>
+
+          <div class="form-group">
             <label for="image">Image</label>
             <input type="text" class="form-group" id="image" name="image" placeholder="Add url's image">
           </div>
