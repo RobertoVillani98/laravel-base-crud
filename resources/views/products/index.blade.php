@@ -2,7 +2,7 @@
 
 @section('pageContent')
 <h1 class="my-3">Comics</h1>
-<a href="{{route("products.create")}}"><button type="button" class="btn btn-warning">Add new comics</button></a>
+<a href="{{route("products.create")}}"><button type="button" class="btn btn-success">Add new comics</button></a>
 <table class="table table-dark my-4">
     <thead>
       <tr>
@@ -27,7 +27,7 @@
         <td>{{$product->sale_date}}</td>
         <td>{{$product->type}}</td>
         <td>
-            <a href="{{route("products.show", $product->id)}}"><button type="button" class="btn btn-danger">Info</button></a>
+            <a href="{{route("products.show", $product->id)}}"><button type="button" class="btn btn-primary">Info</button></a>
             <a href="{{route('products.edit', $product->id)}}"><button type="button" class="btn btn-warning">Modify</button></a>
             <form action="{{route('products.destroy', $product->id)}}" method="POST">
               @csrf
