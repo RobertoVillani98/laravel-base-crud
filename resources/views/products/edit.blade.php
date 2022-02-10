@@ -3,7 +3,7 @@
 
 <h1>Edit Comics: {{$product->title}}</h1>
 
-<form action="{{route("products.update")}}" method="POST">
+<form action="{{route("products.update", $product)}}" method="POST">
     @csrf
     @method("PUT")
     <div class="form-group">

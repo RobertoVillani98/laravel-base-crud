@@ -43,7 +43,7 @@ class ProductController extends Controller
         $newProduct = new Product();
         $newProduct->title = $data["title"];
         $newProduct->description = $data["description"];
-        $newProduct->image = $data["thumb"];
+        $newProduct->image = $data["image"];
         $newProduct->price = $data["price"];
         $newProduct->series = $data["series"];
         $newProduct->sale_date = $data["sale_date"];
