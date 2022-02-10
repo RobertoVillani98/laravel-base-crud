@@ -28,6 +28,12 @@
         <td>{{$product->type}}</td>
         <td>
             <a href="{{route("products.show", $product->id)}}"><button type="button" class="btn btn-danger">Info</button></a>
+            <a href="{{route('products.edit', $product->id)}}"><button type="button" class="btn btn-warning">Modify</button></a>
+            <form action="{{route('products.destroy', $product->id)}}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure want delete?')">Delete</button>
+          </form>
         </td>
       </tr>
       @endforeach

@@ -3,7 +3,8 @@
 @section('pageContent')
     <h1 class="my-3">Add new comics</h1>
 
-    <form>
+    <form action="{{route("products.store")}}" method="POST">
+      @csrf
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="title" placeholder="Add title">
