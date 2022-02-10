@@ -39,6 +39,7 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
+
         $newProduct = new Product();
         $newProduct->title = $data["title"];
         $newProduct->description = $data["description"];

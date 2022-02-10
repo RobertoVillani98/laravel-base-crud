@@ -7,12 +7,12 @@
       @csrf
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" placeholder="Add title">
+          <input type="text" class="form-control" id="title" name="title" placeholder="Add title">
         </div>
        
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" id="description" rows="5" placeholder="Add the description"></textarea>
+          <textarea class="form-control" id="description" name="description" rows="5" placeholder="Add the description"></textarea>
         </div>
        
         <div class="form-group">

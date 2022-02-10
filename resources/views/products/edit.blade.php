@@ -13,17 +13,17 @@
      
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Add the description" value="{{product->description}}"></textarea>
+        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Add the description" value="{{$product->description}}"></textarea>
       </div>
      
       <div class="form-group">
         <label for="price">Prezzo</label>
-        <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo" value="{{product->price}}">
+        <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo" value="{{$product->price}}">
     </div>
      
       <div class="form-group">
           <label for="series">Series</label>
-          <select class="custom-select" id="series" name="series" value="{{product->series}}">
+          <select class="custom-select" id="series" name="series" value="{{$product->series}}">
               <option selected>Open this select menu</option>
               <option value="1">Action Comics</option>
               <option value="2">American Vampire 1976</option>
@@ -41,7 +41,7 @@
 
         <div class="form-group">
           <label for="type">Type</label>
-          <select class="custom-select" id="type" name="type" value="{{product->type}}">
+          <select class="custom-select" id="type" name="type" value="{{$product->type}}">
               <option selected>Open this select menu</option>
               <option value="1">Comic book</option>
               <option value="2">Graphic novel</option>
@@ -50,12 +50,12 @@
 
         <div class="form-group">
           <label for="sale_date">Sale Date</label>
-          <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Add sale date" value="{{product->sale_date}}">
+          <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Add sale date" value="{{$product->sale_date}}">
       </div>
 
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="text" class="form-group" id="image" name="image" placeholder="Add url's image" value="{{product->image}}">
+          <input type="text" class="form-group" id="image" name="image" placeholder="Add url's image" value="{{$product->image}}">
         </div>
 
         <div>
