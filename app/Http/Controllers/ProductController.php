@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Product;
 
 class ProductController extends Controller
@@ -47,8 +48,10 @@ class ProductController extends Controller
             "price" => "required|numeric|min:0.01|max:999.99",
             "series" => "required",
             "sale_date" => "required|date",
-            "type" => "required",
-
+            "type" => [
+                "required",
+                Rule::in(["comic book", "graphic novel"])
+            ]
         ]);
 
         $newProduct = new Product();
@@ -100,13 +103,16 @@ class ProductController extends Controller
         $request->validate([
             "title" => "required|string|max:100",
             "description" => "required|string",
-            "image" => "required|url",
+            "image" => "nullable|url",
             "price" => "required|numeric|min:0.01|max:999.99",
-            "series" => "required",
+            "series" => "required|string|max:50",
             "sale_date" => "required|date",
-            "type" => "required",
-
+            "type" => [
+                "required",
+                Rule::in(["comic book", "graphic novel"])
+            ]
         ]);
+
         $product->title = $data['title'];
         $product->description = $data['description'];
         $product->image = $data['image'];
