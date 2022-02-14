@@ -9,25 +9,28 @@
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Add title" value="{{old('title') ? old('title') : $product->title}}">
-                @error('title')
-                    <div class="alert alert-danger">{{$message}}</div>
-                @enderror
+        
+        @error('title')
+          <div class="alert alert-danger">{{$message}}</div>
+        @enderror
     </div>
      
       <div class="form-group">
         <label for="description">Description</label>
         <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="8" placeholder="Add description">{{old('description') ? old('description') : $product->description}}</textarea>
-                @error('description')
-                    <div class="alert alert-danger">{{$message}}</div>
-                @enderror
+                
+        @error('description')
+          <div class="alert alert-danger">{{$message}}</div>
+        @enderror
       </div>
      
       <div class="form-group">
         <label for="price">Price</label>
         <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Add price" value="{{old('price') ? old('price') : $product->price}}">
-           @error('price')
-             <div class="alert alert-danger">{{$message}}</div>
-           @enderror
+          
+        @error('price')
+           <div class="alert alert-danger">{{$message}}</div>
+         @enderror
     </div>
      
       <div class="form-group">
@@ -48,9 +51,10 @@
               <option value="Batman: White Knight Presents: Harley Quinn" {{$selected == "Batman: White Knight Presents: Harley Quinn" ? "selected" : ""}}>Batman: White Knight Presents: Harley Quinn</option>
               <option value="Catwoman" {{$selected == "Catwoman" ? "selected" : ""}}>Catwoman</option>
             </select>
+            
             @error('series')
-                        <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
+              <div class="alert alert-danger">{{$message}}</div>
+            @enderror
         </div>
 
         <div class="form-group">
@@ -63,16 +67,18 @@
               <option value="comic book" {{$selected == "comic book" ? "selected" : ""}}>Comic book</option>
               <option value="graphic novel" {{$selected == "graphic novel" ? "selected" : ""}}>Graphic novel</option>
             </select>
+           
             @error('type')
-                        <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
+               <div class="alert alert-danger">{{$message}}</div>
+             @enderror
         </div>
 
         <div class="form-group">
           <label for="sale_date">Sale Date</label>
           <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="date" name="sale_date" placeholder="Add sale date" value="{{old('sale_date') ? old('sale_date') : $product->sale_date}}">
+          
           @error('sale_date')
-              <div class="alert alert-danger">{{$message}}</div>
+            <div class="alert alert-danger">{{$message}}</div>
           @enderror
       </div>
 
@@ -80,7 +86,7 @@
           <label for="image">Image</label>
           <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="Add image link" value="{{old('image') ? old('image') : $product->image}}">
           @error('image')
-              <div class="alert alert-danger">{{$message}}</div>
+            <div class="alert alert-danger">{{$message}}</div>
           @enderror
         </div>
 
