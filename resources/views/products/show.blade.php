@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <a href="{{route("products.index")}}"><button type="button" class="btn btn-danger ml-4 mt-5">Torna ai prodotti</button></a>
+        <a href="{{route("products.index")}}"><button type="button" class="btn btn-danger ml-4 mt-5">Back to products</button></a>
 
     </div>
 @endsection

@@ -103,15 +103,16 @@ class ProductController extends Controller
         $request->validate([
             "title" => "required|string|max:100",
             "description" => "required|string",
-            "image" => "nullable|url",
+            "image" => "required|url",
             "price" => "required|numeric|min:0.01|max:999.99",
-            "series" => "require",
+            "series" => "required",
             "sale_date" => "required|date",
             "type" => [
                 "required",
                 Rule::in(["comic book", "graphic novel"])
             ]
         ]);
+
 
         $product->title = $data['title'];
         $product->description = $data['description'];

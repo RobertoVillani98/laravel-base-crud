@@ -26,9 +26,9 @@
         <td>{{$product->series}}</td>
         <td>{{$product->sale_date}}</td>
         <td>{{$product->type}}</td>
-        <td>
+        <td class="d-flex">
             <a href="{{route("products.show", $product->id)}}"><button type="button" class="btn btn-primary">Info</button></a>
-            <a href="{{route('products.edit', $product->id)}}"><button type="button" class="btn btn-warning">Modify</button></a>
+            <a class="mx-2" href="{{route('products.edit', $product->id)}}"><button type="button" class="btn btn-warning">Edit</button></a>
             <form action="{{route('products.destroy', $product->id)}}" method="POST">
               @csrf
               @method('DELETE')

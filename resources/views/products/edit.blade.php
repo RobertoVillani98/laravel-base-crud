@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('pageContent')
 
-<h1>Edit Comics: {{$product->title}}</h1>
+<h1 class="mt-3">Edit Comics: {{$product->title}}</h1>
 
 <form action="{{route("products.update", $product)}}" method="POST">
     @csrf
@@ -23,7 +23,7 @@
       </div>
      
       <div class="form-group">
-        <label for="price">Prezzo</label>
+        <label for="price">Price</label>
         <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Add price" value="{{old('price') ? old('price') : $product->price}}">
            @error('price')
              <div class="alert alert-danger">{{$message}}</div>
@@ -85,8 +85,8 @@
         </div>
 
         <div>
-          <button type="submit" class="btn btn-danger">Add</button>
-          <a href="{{route("products.index")}}"><button type="button" class="btn btn-primary ml-4">Torna ai prodotti</button></a>
+          <button type="submit" class="btn btn-warning">Edit</button>
+          <a href="{{route("products.index")}}"><button type="button" class="btn btn-primary ml-4">Back to products</button></a>
         </div>
       
     </form>
