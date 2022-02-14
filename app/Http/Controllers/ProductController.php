@@ -39,6 +39,17 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
+        // validation
+        $request->validate([
+            "title" => "required|string|max:100",
+            "description" => "required|string",
+            "image" => "required|url",
+            "price" => "required|numeric|min:0.01|max:999.99",
+            "series" => "required",
+            "sale_date" => "required|date",
+            "type" => "required",
+
+        ]);
 
         $newProduct = new Product();
         $newProduct->title = $data["title"];
@@ -85,6 +96,17 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $data = $request->all();
+        // validation
+        $request->validate([
+            "title" => "required|string|max:100",
+            "description" => "required|string",
+            "image" => "required|url",
+            "price" => "required|numeric|min:0.01|max:999.99",
+            "series" => "required",
+            "sale_date" => "required|date",
+            "type" => "required",
+
+        ]);
         $product->title = $data['title'];
         $product->description = $data['description'];
         $product->image = $data['image'];

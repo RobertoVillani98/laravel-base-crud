@@ -8,54 +8,80 @@
     @method("PUT")
     <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Add title" value="{{$product->title}}">
+        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Add title" value="{{old('title') ? old('title') : $product->title}}">
+                @error('title')
+                    <div class="alert alert-danger">{{$message}}</div>
+                @enderror
     </div>
      
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Add the description" value="{{$product->description}}"></textarea>
+        <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="8" placeholder="Add description">{{old('description') ? old('description') : $product->description}}</textarea>
+                @error('description')
+                    <div class="alert alert-danger">{{$message}}</div>
+                @enderror
       </div>
      
       <div class="form-group">
         <label for="price">Prezzo</label>
-        <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo" value="{{$product->price}}">
+        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Add price" value="{{old('price') ? old('price') : $product->price}}">
+           @error('price')
+             <div class="alert alert-danger">{{$message}}</div>
+           @enderror
     </div>
      
       <div class="form-group">
           <label for="series">Series</label>
-          <select class="custom-select" id="series" name="series" value="{{$product->series}}">
-              <option selected>Open this select menu</option>
-              <option value="1">Action Comics</option>
-              <option value="2">American Vampire 1976</option>
-              <option value="3">Aquaman</option>
-              <option value="4">Batgirl</option>
-              <option value="5">Batman Beyond</option>
-              <option value="6">Batman/Superman</option>
-              <option value="7">Batman/Superman Annual</option>
-              <option value="8">Batman: The Joker War Zone</option>
-              <option value="9">Batman: Three Jokers</option>
-              <option value="10">Batman: White Knight Presents: Harley Quinn</option>
-              <option value="11">Catwoman</option>
+          <select name="series" id="series" class="form-control @error('series') is-invalid @enderror">
+            @php
+                $selected = old('series') ? old('series') : $product->series;
+            @endphp
+              <option value="Action Comics" {{$selected == "Action Comics" ? "selected" : ""}}>Action Comics</option>
+              <option value="American Vampire 1976" {{$selected == "American Vampire 1976" ? "selected" : ""}}>American Vampire 1976</option>
+              <option value="Aquaman" {{$selected == "Aquaman" ? "selected" : ""}}>Aquaman</option>
+              <option value="Batgirl" {{$selected == "Batgirl" ? "selected" : ""}}>Batgirl</option>
+              <option value="Batman Beyond" {{$selected == "Batman Beyond" ? "selected" : ""}}>Batman Beyond</option>
+              <option value="Batman/Superman" {{$selected == "Batman/Superman" ? "selected" : ""}}>Batman/Superman</option>
+              <option value="Batman/Superman Annual" {{$selected == "Batman/Superman Annual" ? "selected" : ""}}>Batman/Superman Annual</option>
+              <option value="Batman: The Joker War Zone" {{$selected == "Batman: The Joker War Zone" ? "selected" : ""}}>Batman: The Joker War Zone</option>
+              <option value="Batman: Three Jokers" {{$selected == "Batman: Three Jokers" ? "selected" : ""}}>Batman: Three Jokers</option>
+              <option value="Batman: White Knight Presents: Harley Quinn" {{$selected == "Batman: White Knight Presents: Harley Quinn" ? "selected" : ""}}>Batman: White Knight Presents: Harley Quinn</option>
+              <option value="Catwoman" {{$selected == "Catwoman" ? "selected" : ""}}>Catwoman</option>
             </select>
+            @error('series')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
         </div>
 
         <div class="form-group">
           <label for="type">Type</label>
-          <select class="custom-select" id="type" name="type" value="{{$product->type}}">
+          <select name="type" id="type" class="form-control @error('type') is-invalid @enderror">
+            @php
+                $selected = old('type') ? old('type') : $product->type;
+            @endphp
               <option selected>Open this select menu</option>
-              <option value="1">Comic book</option>
-              <option value="2">Graphic novel</option>
+              <option value="comic book" {{$selected == "comic book" ? "selected" : ""}}>Comic book</option>
+              <option value="graphic novel" {{$selected == "graphic novel" ? "selected" : ""}}>Graphic novel</option>
             </select>
+            @error('type')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
         </div>
 
         <div class="form-group">
           <label for="sale_date">Sale Date</label>
-          <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Add sale date" value="{{$product->sale_date}}">
+          <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="date" name="sale_date" placeholder="Add sale date" value="{{old('sale_date') ? old('sale_date') : $product->sale_date}}">
+          @error('sale_date')
+              <div class="alert alert-danger">{{$message}}</div>
+          @enderror
       </div>
 
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="text" class="form-group" id="image" name="image" placeholder="Add url's image" value="{{$product->image}}">
+          <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="Add image link" value="{{old('image') ? old('image') : $product->image}}">
+          @error('image')
+              <div class="alert alert-danger">{{$message}}</div>
+          @enderror
         </div>
 
         <div>
